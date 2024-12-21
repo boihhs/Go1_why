@@ -238,7 +238,7 @@ void GazeboGo1ROS::gt_pose_callback(const nav_msgs::Odometry::ConstPtr &odom) {
     go1_ctrl_states.foot_pos_rel.block<3, 1>(0, 1)= fk_jac_go1.FL_foot(go1_ctrl_states.joint_pos); //
     go1_ctrl_states.foot_pos_rel.block<3, 1>(0, 2)= fk_jac_go1.RR_foot(go1_ctrl_states.joint_pos); //
     go1_ctrl_states.foot_pos_rel.block<3, 1>(0, 3)= fk_jac_go1.RL_foot(go1_ctrl_states.joint_pos); //
-
+    std::cout << "init amongus" << std::endl;
 
     // Go1 foot Jacobian in Base coordinate system
     go1_ctrl_states.j_foot.block<3, 12>(0, 0) = fk_jac_go1.NumJac(go1_ctrl_states.joint_pos, &Go1Kinematics::FR_foot);
