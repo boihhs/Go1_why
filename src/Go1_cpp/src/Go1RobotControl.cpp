@@ -500,7 +500,7 @@ void Go1RobotControl::generate_swing_legs_ctrl(Go1ControlStates &state, double d
         }
     }
 
-    std::cout << "dafdsfdssssssss: " << state.foot_pos_rel << std::endl;
+    std::cout << "dafdsfdssssssss: " << state.joint_pos << std::endl;
     // std::cout << "foot_pos_recent_contact z: " << state.foot_pos_recent_contact.block<1, 4>(2, 0) << std::endl;
     state.foot_forces_kin = foot_forces_kin;
 }
