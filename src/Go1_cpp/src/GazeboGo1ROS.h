@@ -16,6 +16,7 @@
 #include <condition_variable>
 #include <fstream>
 #include <vector>
+#include <iostream>
 
 // ROS
 #include <ros/ros.h>
