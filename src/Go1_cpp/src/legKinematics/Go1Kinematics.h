@@ -4,6 +4,7 @@
 #define Go1_KINEMATICS_H
 
 #include <eigen3/Eigen/Dense>
+#include <iostream>
 
 // class Forward_Kin 
 // { 
