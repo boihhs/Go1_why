@@ -30,6 +30,7 @@
                             0,           0,   0,  1; 
 
         T_w2b =   T_w2b_pos* T_w2b_yaw*T_w2b_pitch*T_w2b_roll;  
+        
 
         return T_w2b; // 4X4 Transformation matrix
     }
@@ -67,6 +68,7 @@
 
         T_b2FR_foot = T_b2FR_hr*T_FR_hr2hp*T_FR_hp2kp*T_FR_kp2f;
         Eigen::Vector3d FR_foot = T_b2FR_foot.block<3,1>(0,3);
+        std::cout << "FR_foot: " << FR_foot << std::endl;
         return FR_foot;
     }
 
