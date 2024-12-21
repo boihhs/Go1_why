@@ -81,7 +81,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Clone and build Unitree ROS packages
 WORKDIR $UNITREE_WS/src
-RUN git clone --branch master https://github.com/ShuoYangRobotics/unitree_ros.git
+RUN git clone https://github.com/boihhs/unitree_ros.git
 
 # Remove problematic packages (if necessary)
 RUN rm -rf $UNITREE_WS/src/unitree_ros/unitree_legged_real
@@ -92,9 +92,9 @@ RUN sed -i 's|#include <gazebo/common/Color.hh>|#include <ignition/math/Color.hh
     sed -i 's|common::Color|ignition::math::Color|g' \
     $UNITREE_WS/src/unitree_ros/unitree_gazebo/plugin/draw_force_plugin.cc
 
-# Clone the Go1-QP-MPC-Controller from GitHub
+# Clone the A1-QP-MPC-Controller from GitHub
 WORKDIR /root/Go1_ctrl_ws/src
-RUN git clone https://github.com/boihhs/Go1-QP-MPC-Controller-Real.git Go1_Ctrl
+RUN git clone https://github.com/boihhs/Go1_why Go1_Ctrl
 
 # Build workspace packages step-by-step
 WORKDIR $UNITREE_WS
